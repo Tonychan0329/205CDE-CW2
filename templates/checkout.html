@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h2 class="text-center text-success" >Proceed to pay HK$ {{totalPrice}} </h2>
+    <form id="stripe-form" style="text-align: center; padding: 10%; font-size: 20px;" action="http://localhost:5000/checkout/complete">
+        <input type="hidden" name="stripe_token" value="" />
+        <div>
+            <label>Card number</label>
+            <input type="text" size="20" minlength="19" maxlength="19" autocomplete="off" id="card-number">
+        </div>
+        <div>
+            <label>CVC</label>
+            <input type="text" size="4" minlength="4" maxlength="4" autocomplete="off" id="card-cvc"/>
+        </div>
+        <div>
+            <label>Expiration (MM/YYYY)</label>
+            <input type="text" size="2" minlength="2" maxlength="2" id="card-expiry-month"/>
+            /
+            <input type="text" size="4" minlength="4" maxlength="4" id="card-expiry-year"/>
+        </div>
+        <h5 class="text-danger">HK$ {{totalPrice}}</h5>
+        <div>
+            <button type="submit" class="submit-button">Submit Payment</button>
+        </div>
+    </form>  
+{% endblock %}

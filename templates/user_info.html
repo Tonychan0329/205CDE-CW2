@@ -1,0 +1,39 @@
+{% extends 'admin_layout.html' %}
+{% block body %}
+<div class="jumbotron text-center text-info">
+    <h1>User Account Information</h1>
+</div>
+
+<div class="table-responsive-md">
+    <table class="table table-info ">
+        <thead class="thead-dark">
+        <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in output_data %} 
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[3]}}{{row[4]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[5]}} , {{row[6]}} , {{row[7]}}</td>
+                    <td>{{row[8]}}</td>
+                    <td>
+                        <form action="{{url_for('delete_user', userId = row[0])}}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="submit" value="delete" class="btn btn-danger">
+                        </form>
+                    </td>
+
+                </tr>
+            {% endfor %}        
+        </tbody>
+    </table>
+</div>
+{% endblock %}

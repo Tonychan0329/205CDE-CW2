@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <a href="/products"><h1>Reservation</h1></a>    
+        </div>
+        <div class="text-center text-success">{{ msg }}</div>
+    </div>
+    <div class="container">
+        <form action="http://localhost:5000/reservation/submit" method="post" class="needs-validation" novalidate>
+            <!--email-->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <!--Phone Number-->
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            
+            <!--Product Id-->
+            <div class="form-group">
+                <label for="pd-id">Product:</label>
+                <div>
+                    <select name="product" id="product" class="form-control" required>
+                        {%for row in output_data%}
+                        <option>{{row[0]}}</option>
+                        {% endfor %}
+                    </select>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+            </div>
+            
+            <!--Number of product-->
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <div>
+                    <select name="amount" id="amount" class="form-control" required>
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                        <option >5</option>
+                    </select>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+            </div>
+            <!--submit-->
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+<script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+            }, false);
+        });
+        }, false);
+    })();
+</script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block body %}
+<link rel="stylesheet" href={{url_for('static', filename='css/index.css')}}>
+<header class="hero">
+  <div class="banner">
+      <h1 class="banner-title">Epidemic prevention supplies collection</h1>
+      <a href="/products"><button class="banner-btn btn btn-link">shop now</button></a>
+  </div>
+</header>
+
+<div class="container">
+{% for row in output_data%}
+  <div class="row" style="padding: 5%; display: inline;">
+    <div class="text-center" >
+        <img class="card-img-top zoom" src={{url_for('static', filename='images/' + row[3])}} alt="image" 
+        style="width:200px; height: 200px;">
+        <div class="card-body">
+          <h5 class="card-title">{{row[1]}}</h5>
+          <p class="card-text">{{row[6]}}</p>
+          <p class="card-stock text-info">{{row[7]}}</p>
+        </div>
+    </div>
+  <hr>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}

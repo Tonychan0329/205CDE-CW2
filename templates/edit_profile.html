@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="jumbotron text-center text-info">
+    <h2 class="text-center">Edit profile</h2>
+    <div class="text-center text-success">{{ msg }}</div>
+</div>
+<form action="http://localhost:5000/updateProfile" method="POST" >      
+    <!--email-->
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" value={{profileData[2]}} >
+    </div>
+    <!--First Name-->
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" value={{profileData[3]}} >
+    </div>
+    <!--Last Name-->
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" value={{profileData[4]}}>
+    </div>
+    <!--Address-->
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" id="address" name="address" value={{profileData[5]}}>
+    </div>
+    <!--city-->
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" id="city" name="city"value={{profileData[6]}} >
+    </div>
+    <!--Country-->
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" id="country" name="country" value={{profileData[7]}}>
+    </div>
+    <!--Phone Number-->
+    <div class="form-group">
+        <lbael for="phone_number">Phone:</label>
+        <input type="text" class="form-control" id="phone_number" name="phone_number" value={{profileData[8]}} >
+    </div>
+    <!--submit-->
+    <div>
+        <button type="submit" class="btn btn-primary" value="save">Save</button>
+    </div>
+</form>
+{% endblock %}

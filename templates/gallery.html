@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="jumbotron text-center text-danger">
+    <h1>These product we are selling </h1>
+    <p class="lead">If you want to know more detail about our product. Please register an account and login to our product page </p>
+</div>
+{% for row in output_data %}
+<div class="text-center" style="display: inline-table; padding: 5%; ">
+    <div >
+        <img src={{url_for('static', filename='images/' + row[3] )}} 
+        style="width: 200px; height: 200px; box-shadow: 0 0 10px 9px lightblue;">
+    </div>
+    <br>
+    <h5 class="text-danger">Status: {{row[7]}}</h5>
+</div>
+{% endfor %}
+{% endblock %}

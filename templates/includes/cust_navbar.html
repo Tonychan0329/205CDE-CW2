@@ -1,0 +1,41 @@
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="{{url_for('static', filename='images/logo.png')}}" style="width: 100px; height: 100px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="/">HOME</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/about">ABOUT</a></li> 
+        <li class="nav-item active"><a class="nav-link" href="/gallery">GALLERY</a></li>  
+      </ul>
+      {% if not session['loggedin'] %}
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item active"><a class="nav-link" href="/cust_reg">REGISTER</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/cust_login">CUSTOMER</a></li> 
+        <li class="nav-item active"><a class="nav-link" href="/admin_login">ADMIN</a></li>
+      </ul>
+      {% else %}
+      <ul class="navbar-nav ">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Hello, User</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/account/profile">Your Profile</a>
+                <a class="dropdown-item" href="/account/profile/edit">Edit Your Profile</a>
+                <a class="dropdown-item" href="/account/profile/changePassword">Edit Your Password</a>
+            </div>
+        </li>
+        <li class="nav-item active"><a class="nav-link" href="/products">Product</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/reservation">Reservation</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/cart">Shopping Cart</a></li> 
+        <li class="nav-item active"><a class="nav-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="form-inline" action="/search" method="POST">
+        <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+      {% endif %}
+    </div>
+  </nav>

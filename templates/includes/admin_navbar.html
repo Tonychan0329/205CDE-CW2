@@ -1,0 +1,19 @@
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+    <a class="navbar-brand" href="/dashboard"><img src={{url_for('static', filename='images/logo.png')}} style="width: 100px; height: 100px;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/userinfo">Users Information</a></li> 
+        <li class="nav-item active"><a class="nav-link" href="/userReservation">Users Reservation</a></li> 
+        <li class="nav-item active"><a class="nav-link" href="/admin/order">User Order</a></li> 
+        <li class="nav-item active"><a class="nav-link" href="/addproduct">Add Product</a></li> 
+      </ul>
+      <ul class="navbar-nav navbar-right">
+        <li class="nav-item active"><a class="nav-link" href="/adminlogout">Logout</a></li>
+      </ul>
+    </div>
+  </nav>

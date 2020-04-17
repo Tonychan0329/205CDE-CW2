@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div id="display" >
+	<div id="productName">
+		<h1 class="text-success">{{data[1]}}</h1>
+	</div>
+	<div>
+		<img src={{url_for('static', filename='images/'+data[3]) }} id="productImage" style="width: 200px; height: 200px;">
+	</div>
+
+	<div id="productDescription" >
+		<h2 class="text-success">Details</h2>
+		<table id="descriptionTable">
+			<tr>
+				<td><h7> Name: </h5> </td>
+				<td>{{data[1]}}</td>
+			</tr>
+			<tr>
+				<td><h7>Price:</h5></td>
+				<td>HK$ {{data[4]}}</td>
+			</tr>
+		</table>
+		<h2 class="text-success">Description</h2>
+		<p>{{data[6]}}</p>
+	</div>
+	<div id="addToCart">
+		<a href="/addToCart?productId={{request.args.get('productId')}}" class="btn btn-info">Add To Cart</a>
+		
+	</div>
+	<br>
+	<a href="/products" class="btn btn-primary">Back</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1 class="text-center text-success" style="padding-top: 5%;">Thank you!</h1>
+{% for row in output_data%}
+<div class="text-center" style="padding: 5%;">
+    <h3>Thank you for purchasing {{row[0]}}{{row[1]}}</h3>
+    <br>
+    <h4>
+        <a href="/products"> Back </a> </a><br >
+    </h4>
+</div>
+{% endfor %}
+{% endblock %}

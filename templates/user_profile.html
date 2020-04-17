@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div>{{ msg }}</div>
+<div class="jumbotron text-center text-info">
+    <h1>Your Account Information</h1>
+</div>
+{% for row in userdata %}
+<div  style="padding: 10%;">
+    <h3>User ID: {{row[0]}}</h3>
+    <br>
+    <h3>User Name: {{row[3]}}{{row[4]}}</h3>
+    <br>
+    <h3>Email: {{row[2]}}</h3>
+    <br>
+    <h3>Address: {{row[5]}} , {{row[6]}} , {{row[7]}}</h3>
+    <br>
+    <h3>Phone: {{row[8]}}</h3>
+    <br>
+    <a href="/account/profile/edit" class="btn btn-success">Edit</a>
+</div>
+{% endfor %}
+{% endblock %}
