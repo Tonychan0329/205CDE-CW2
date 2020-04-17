@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 1px;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.container h1{
+    color: rgb(197, 31, 122);
+}
+.admin-btn{
+    margin-left: 10%;
+    color: rgb(41, 179, 179);
+}
+
+.reg-btn{
+    color: lightcoral;
+    margin-left: 5%;
+    font-size: 15px;
+}

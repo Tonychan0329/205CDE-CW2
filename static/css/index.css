@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* --------------- Narbar ---------------- */
+.navbar-brand img{
+    width: 60px;
+}
+/* ---------------End of narbar ---------------- */
+ /* --------------- Hero ---------------- */
+ .hero {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .banner {
+    text-align: center;
+    background: rgba(39, 90, 124, 0.8);
+    display: inline-block;
+    padding: 40px;
+  }
+  .banner-title {
+    font-size: 3.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 3rem;
+  }
+  .banner-btn {
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    background: #e4b142;
+    color: #222;
+    border: 1px solid #e4b142;
+    transition: all 0.3s linear;
+    cursor: pointer;
+  }
+  .banner-btn:hover {
+    background: transparent;
+    color: #e4b142;
+  }
+  /* --------------- End of Hero ---------------- */
